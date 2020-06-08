@@ -42,6 +42,7 @@ footer {
     padding: 14px 16px;
     text-decoration: none;
     font-size: 24px;
+    cursor: pointer;
 }
 
 .top a:hover {
@@ -56,6 +57,14 @@ footer {
 }
 table {
 align-content: center;
+}
+button {
+    background-color: #333;
+    width: initial;
+    height: initial;
+    align-content: center;
+    text-align: center;
+    color: ivory;
 }
 
 
