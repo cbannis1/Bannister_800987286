@@ -2,20 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Blog</title>
     <link rel = "Stylesheet" type = "text/css" href = "Styles.css"/>
     <script type = "text/javascript" src = "blog.js"></script>
 </head>
 <body id ="myBody">
-<div class = "top">
-    <a href = "index.html">Font Resize</a>
-    <a href = "admin/login.html">Admin Login</a>
-    <a onclick="background1()" style="background-image: url('simple.jpg');">Space</a>
-    <a onclick="background2()" style="background: #993366;">Mt. Top</a>
-    <a href = "index.html" style="background:#2E3375;">Blue</a>
-
-</div>
-
+<div>
+    <ul>
+    <li class = "dropdown">
+        <a class = "dropbtn">Font Resisze</a>
+        <div class = "dropdown-content">
+            <a onclick="bigger()">Bigger</a>
+            <a onclick="smaller()">Smaller</a>
+        </div>
+    </li>
+    <li><a href = "admin/login.html">Admin Login</a></li>
+        <li class = "dropdown">
+            <a class = "dropbtn">Style</a>
+            <div class = "dropdown-content">
+                <a onclick="background1()">Space</a>
+                <a onclick="background2()">Mt. Top</a>
+                <a href = "index.html">Blue</a>
+            </div>
+        </li>
+    </ul>
+    </div>
 <br>
 <div class = "container">
     <a href = "post.html">Blog Entry</a>
