@@ -11,3 +11,4 @@ function bigger(){
 function smaller(){
     document.getElementById("myBody").style.fontSize = "1.0em";
 }
+
