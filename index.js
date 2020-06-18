@@ -1,19 +1,18 @@
-const path = require('path');
+var express = require('express');
+var app = express();
 
-const express = require('express');
+app.engine('html', require('ejs').renderFile);
+app.set('views', './views');
+app.set('view engine', 'ejs');
 
-const app = new express();
 
-app.use(express.static('public'));
-
-app.get('/', (req,res) => {
-    res.sendFile(path.resolve(__dirname, './index.html'));
+app.get("/", (req, res) => {
+   res.render('index');
 });
+app.get("/", (req, res) => {
+    res.render('post');
+ });
 
-app.listen(3000, () => 
-{
-    console.log('App listening on Port 3000')
-});
-
-
-
+ app.listen(7000, () => {
+    console.log('Server listing on 3000');
+})
