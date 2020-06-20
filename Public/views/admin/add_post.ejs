@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add post</title>
+    <link rel = "Stylesheet" type = "text/css" href = "../style.css"/>
+    <script type = "text/javascript" src = "../blog.js"></script>
+</head>
+<body id ="myBody">
+<div>
+    <ul>
+    <li><a href = "/">Home</a></li>
+    <li class = "dropdown">
+        <a class = "dropbtn">Font Resisze</a>
+        <div class = "dropdown-content">
+            <a onclick="bigger()">Bigger</a>
+            <a onclick="smaller()">Smaller</a>
+        </div>
+    </li>
+    <li><a href = "login">Admin Login</a></li>
+        <li class = "dropdown">
+            <a class = "dropbtn">Style</a>
+            <div class = "dropdown-content">
+                <a onclick="background1()">Space</a>
+                <a onclick="background2()">Mt. Top</a>
+                <a href = "">Blue</a>
+            </div>
+        </li>
+    </ul>
+    </div>
+    <form class = "container">
+    <label>Post Title</label><br>
+    <input type = "text"><br>
+    <label>Post Text</label><br>
+    <input type = "text area"><br>
+    <label>Post</label><br>
+    <input type = "button"><br>
+</form>
+</body>
+</html>
