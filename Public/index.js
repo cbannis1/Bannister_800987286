@@ -9,6 +9,7 @@ var mongoose = require('mongoose');
 mongoose.connect("mongodb+srv://test:test@posts-5e38r.mongodb.net/post");
 
 var bodyParser = require('body-parser');
+const { response } = require('express');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -37,8 +38,18 @@ app.get("/", function (req, res){
    });
 });
 //post
-app.get('/post', function (req, res) {
-   res.render('post');
+// app.get('/post', function (req, res) {
+//     //pass through params to keep page updated 
+//        res.render('post');
+//     });
+app.get('/post/post_id', function(req, res){
+    var content = req.params.content;
+    var title = req.params.title;
+    showPost(title, content, function(err, blogpost){
+      if (err) throw error;
+      var showPost = res.params.post_id;
+      res.render('post', showPost);
+    });
 });
 app.post("/post", urlencodedParser, function(req, res) {
    //get data from the view and add it to mongodb
@@ -46,7 +57,7 @@ app.post("/post", urlencodedParser, function(req, res) {
       if (err) throw err;
       Post.find({}, function(err, data){
         if (err) throw err; 
-        res.render('admin/list_posts');
+        res.render('post');
       });
    });
  });
@@ -64,7 +75,12 @@ app.get('/admin/login', function (req, res) {
 });
 //add post.ejs
 app.get('/admin/add_post', function (req, res) {
-  res.render('admin/add_post')
+  Post.find({}, (err, posts) => {
+    Post.find({}, function(err, data){
+       if (err) throw err; 
+       res.render('admin/add_post', { posts: data});
+    });
+ });
 });
 //add user.ejs
 app.get('/admin/add_user', function (req, res) {
