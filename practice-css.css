@@ -1,0 +1,19 @@
+html, body{
+
+    background-color: lightblue;
+    font-style: italic, bold;
+    color: #333;
+    font: Arial;
+    align-content: center;
+}
+header{
+    text-align: center;
+    font-size: 60px;
+    color: #333;
+    font-style: italic;
+}
+ul {
+    align-items: center;
+    text-align: center;
+
+}
