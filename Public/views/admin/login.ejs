@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel = "Stylesheet" type = "text/css" href = "../style.css"/>
+    <script type = "text/javascript" src = "../blog.js"></script>
+</head>
+<body id ="myBody">
+<div>
+    <ul>
+    <li><a href = "/">Home</a></li>
+    <li class = "dropdown">
+        <a class = "dropbtn">Font Resisze</a>
+        <div class = "dropdown-content">
+            <a onclick="bigger()">Bigger</a>
+            <a onclick="smaller()">Smaller</a>
+        </div>
+    </li>
+    <li><a href = "login">Admin Login</a></li>
+        <li class = "dropdown">
+            <a class = "dropbtn">Style</a>
+            <div class = "dropdown-content">
+                <a onclick="background1()">Space</a>
+                <a onclick="background2()">Mt. Top</a>
+                <a href = "">Blue</a>
+            </div>
+        </li>
+    </ul>
+    </div>
+<br>
+<br>
+
+<form class = "container">
+    <h1>Login</h1>
+    <label>UserName</label><br>
+    <input type="text"><br>
+    <label>Password</label><br>
+    <input type = "password"><br>
+    <label><a href ="add_user">Create Account</a></label>
+    <label><a href ="list_users">List Users</a></label>
+    <label><a href ="list_posts">View Posts</a></label>
+</form>
+</body>
+</html>

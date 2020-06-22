@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add post</title>
+    <link rel = "Stylesheet" type = "text/css" href = "../style.css"/>
+    <script type = "text/javascript" src = "../blog.js"></script>
+    <script type = "text/javascript" src = "../add_post.js"></script>
+
+</head>
+<body id ="myBody">
+<div>
+    <ul>
+    <li><a href = "/">Home</a></li>
+    <li class = "dropdown">
+        <a class = "dropbtn">Font Resisze</a>
+        <div class = "dropdown-content">
+            <a onclick="bigger()">Bigger</a>
+            <a onclick="smaller()">Smaller</a>
+        </div>
+    </li>
+    <li><a href = "login">Admin Login</a></li>
+        <li class = "dropdown">
+            <a class = "dropbtn">Style</a>
+            <div class = "dropdown-content">
+                <a onclick="background1()">Space</a>
+                <a onclick="background2()">Mt. Top</a>
+                <a href = "">Blue</a>
+            </div>
+        </li>
+        <li class = "dropdown">
+            <a class = "dropbtn">Post</a>
+            <div class = "dropdown-content">
+                <a href = "../post">Post</a>
+                <a href = "add_post">Add</a>
+                <a href = "update_post">Update</a>
+                <a href = "list_posts">View</a>
+            </div>
+        </li>
+    </ul>
+    </div>
+<!-- this is where the post will be added -->
+<form class = "container">
+    <input type = 'text' id = "title" placeholder="Your title here..."><br><br>
+    <textarea name="Content" id = "content" placeholder="Share to the World here :)"></textarea><br><br>
+    <button class = "button" onclick="addPost()">Submit</button>
+</form>
+<div>
+    <ul id = "blogPost"></ul>
+    <% for (var i = 0; i<posts.length; i++) {%>
+        <ol class = "container">
+            <% var post_id = i;%>
+            <li><%= posts[i].title%></li><br>
+            <li><%= posts[i].Content%></li><br>
+        </ol>
+    <%}%>
+</div>
+</body>
+</html>
