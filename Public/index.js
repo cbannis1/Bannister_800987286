@@ -44,7 +44,10 @@ app.post("/post", urlencodedParser, function(req, res) {
    //get data from the view and add it to mongodb
    var newPost = Post(req.body).save(function(err,data){
       if (err) throw err;
-      res.json(data);
+      Post.find({}, function(err, data){
+        if (err) throw err; 
+        res.render('admin/list_posts');
+      });
    });
  });
 
