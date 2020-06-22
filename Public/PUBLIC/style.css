@@ -30,13 +30,15 @@ footer {
 table {
 align-content: center;
 }
-button {
-    background-color: #333;
-    width: initial;
-    height: initial;
-    align-content: center;
-    text-align: center;
-    color: ivory;
+.button {
+  background-color: #333; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 
 ul {
