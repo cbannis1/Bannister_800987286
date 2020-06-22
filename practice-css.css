@@ -3,7 +3,6 @@ html, body{
     margin: 0;
     padding: 0;
 }
-/*adds the repeating gradient seen throughout the website*/
 body {
     height: auto;
     scroll-behavior: smooth;
@@ -12,26 +11,20 @@ body {
     min-width: 250px;
 }
 
-/*styles the header*/
 h1{
     text-align: center;
     font-size: 72px;
 }
 
 
-/*Styling for the ToDo chart*/
-/* Styles all elements to same box-sizing  */
 * {
     box-sizing: border-box;
 }
 
-/* Sets the margin and padding for Unordered list */
 ul {
     margin: 0;
     padding: 0;
 }
-
-/* Styles the list elements */
 ul li {
     position: relative;
     padding: 12px 8px 12px 40px;
@@ -39,42 +32,39 @@ ul li {
     background: lightgray;
     font-size: 18px;
 }
-/*this allows for every other item in the list to be a different color for visual appeasement*/
+
 ul li:nth-child(odd) {
     background: white;
 }
-
-/*changes the background color on hover */
 ul li:hover {
     background: #f5f5f5;
 }
 
-/* changes background color when checked and text to show visual completion of task */
+
 ul li.checked {
     background-color: #6a6a6a;
     color: white;
     text-decoration: line-through;
 }
-/*adds hover for checked elements*/
+
 ul li.checked:hover {
     background: goldenrod;
     color: #6a6a6a;
 }
-/* Style the header */
+
 .header {
     padding: 30px 40px;
     color: #333;
     text-align: center;
 }
 
-/* allows for elements to be properly displayed in the form  */
+
 .header:after {
     content: "";
     display: table;
     clear: both;
 }
 
-/* Style the input in the form */
 input {
     margin: 0;
     border: none;
@@ -85,7 +75,6 @@ input {
     font-size: 20px;
 }
 
-/* style the add button */
 .add {
     padding: 15px;
     width: 25%;
