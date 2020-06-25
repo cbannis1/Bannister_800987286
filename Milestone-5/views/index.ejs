@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel = "Stylesheet" type = "text/css" href = "style.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type = "text/javascript" src = "blog.js"></script>
+    <title>Blog</title>
+</head>
+<body id ="myBody">
+    <div>
+        <ul>
+        <li><a href = "/">Home</a></li>
+        <li class = "dropdown">
+            <a class = "dropbtn">Font Resisze</a>
+            <div class = "dropdown-content">
+                <a onclick="bigger()">Bigger</a>
+                <a onclick="smaller()">Smaller</a>
+            </div>
+        </li>
+        <li><a href = "admin/login">Admin Login</a></li>
+            <li class = "dropdown">
+                <a class = "dropbtn">Style</a>
+                <div class = "dropdown-content">
+                    <a onclick="background1()">Space</a>
+                    <a onclick="background2()">Mt. Top</a>
+                    <a href = "">Blue</a>
+                </div>
+            </li>
+            <li><a href = "admin/add_post">Add</a></li>
+        </ul>
+        </div>
+    <div> 
+    </div>
+    <div>
+        <br>
+        <h1>Blog Posts</h1>
+        <% posts.forEach( post => { %>
+            <div class = "container">
+                <br>
+                <%= post.title %>
+                <br>
+                <%= post.content %> 
+                <br>
+                <br>
+                <button class = "button"><a href= "admin/<%= post.id %>">View</a></button>
+                <button class = "button"><a href= "admin/update_post/<% post.id %>">Update</a></button><br><br>
+                <form action ="/admin/<%= post.id %>?_method=DELETE" method="POST">
+                    <button type="submit" class = "button">Delete</button>
+                </form>
+            </div>
+        <% }) %>
+    </div>
+</body>
+</html>

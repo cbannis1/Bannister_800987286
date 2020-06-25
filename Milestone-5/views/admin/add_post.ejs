@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel = "Stylesheet" type = "text/css" href = "../style.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type = "text/javascript" src = "../blog.js"></script>
+    <title>Add Post </title>
+</head>
+<body id = "myBody">
+    <div>
+        <ul>
+        <li><a href = "/">Home</a></li>
+        <li class = "dropdown">
+            <a class = "dropbtn">Font Resisze</a>
+            <div class = "dropdown-content">
+                <a onclick="bigger()">Bigger</a>
+                <a onclick="smaller()">Smaller</a>
+            </div>
+        </li>
+        <li><a href = "admin/login">Admin Login</a></li>
+            <li class = "dropdown">
+                <a class = "dropbtn">Style</a>
+                <div class = "dropdown-content">
+                    <a onclick="background1()">Space</a>
+                    <a onclick="background2()">Mt. Top</a>
+                    <a href = "">Blue</a>
+                </div>
+            </li>
+            <li><a href = "admin/add_post">Add</a></li>
+        </ul>
+        </div>
+    <div>
+        <h1>Add Post</h1>
+        <form action="/admin" method="POST">
+            <div class = "container">
+                <div>
+                    <label for="title">Title</label><br>
+                    <input type = "text" name = "title" id = "title"><br>
+                </div>
+                <div>
+                    <label for="content">Content</label><br>
+                    <textarea name = "content" id = "content"></textarea><br>
+                </div>
+                <button class = "button"><a href = '/'>Cancel</a></button>
+                <button type="submit" class = "button">Save</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
