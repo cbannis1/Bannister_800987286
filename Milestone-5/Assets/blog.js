@@ -1,3 +1,5 @@
+//styling functions used in navigation bar 
+
 function background1() {
     document.getElementById("myBody").style.background = "url('./simple.jpg') no-repeat";
 }
