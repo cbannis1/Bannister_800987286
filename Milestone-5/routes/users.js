@@ -7,16 +7,17 @@ const router = express.Router()
 
 //list all users
 router.get("/users", (req,res) =>{
-User.find({id: req.params.id, username: req.params.username, password: req.params.password}).then(function(user){
+User.find({}).then(function(user){
     res.send(user)
 })
 })
 //list individual users
 router.get('/users/:id', async (req, res) => {
-    res.send(`${req.params.id} was found`)
-    await User.findById(req.params.id)
-    res.redirect('/users')
+   await User.findById(req.params.id).then(function(user){
+        res.send(user)
+    })
 })
+
 //add users
 router.post("/users", (req,res)=>{
     User.create(req.body).then(function(user){
@@ -24,11 +25,20 @@ router.post("/users", (req,res)=>{
     })
 })
 //update users
-router.put('/users/:id', async (req, res) => {
-    res.send(`${req.params.id} was updated`)
-    await User.findByIdAndUpdate(req.params.id)
-    res.redirect('/users')
-})
+// router.put('/users/:id', async (req, res) => {
+//     await User.findByIdAndUpdate(req.params.id)
+//     res.redirect('/users')
+// })
+
+router.put('/users/:id', function(req, res, next) {
+    console.log(req.body);
+    User.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
+     if (err) return next(err);
+     res.json(user);
+    });
+   });
+   
+
 //delete users
 router.delete('/users/:id', async (req, res) => {
     res.send(`${req.params.id} was deleted`)
