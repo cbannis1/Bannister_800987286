@@ -48,18 +48,28 @@ router.post('/', async (req, res ) => {
 
 //handles the put request for update_post  
 //still getting unhandled promise rejections when trying to visit this page 
-router.put('/:id',  async (req, res ) => {//does not work without async, reloads the page before it is able to update the post 
-    let post = new Post({
-    title: req.body.title,
-    content: req.body.content
-    })
-    try {
-      post =  await post.save()//needs await here because of the async above 
-      res.redirect(`/admin/${post.id}`)//this will send the user back to the admin route using the specified post.id 
-    } catch (error) {
-      res.render('admin/update_post')//if this doesnt work it should return the user back to the updat_post page 
-    }
-})
+// router.put('/:id',  async (req, res ) => {//does not work without async, reloads the page before it is able to update the post 
+//     let post = new Post({
+//     title: req.body.title,
+//     content: req.body.content
+//     })
+//     try {
+//       post =  await post.save()//needs await here because of the async above 
+//       res.redirect(`/admin/${post.id}`)//this will send the user back to the admin route using the specified post.id 
+//     } catch (error) {
+//       res.render('admin/update_post')//if this doesnt work it should return the user back to the updat_post page 
+//     }
+// })
+
+
+router.put('/posts/:id', function(req, res, next) {
+  console.log(req.body);
+  Post.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
+   if (err) return next(err);
+   res.render('admin/update_post')
+  });
+ });
+ 
 
 //handles the delete request 
 //asynchronous because of unhandled promise rejections error solved by using async and then await

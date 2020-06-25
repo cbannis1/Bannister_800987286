@@ -6,14 +6,11 @@ const usersRouter = require('./routes/users')
 const methodOverride = require('method-override')
 const bodyParser = require('body-parser')
 const app = express()
-<<<<<<< HEAD
 //used to upload files 
 upload = require("express-fileupload")
 app.use(upload())
 
-=======
 app.use(bodyParser.json())
->>>>>>> milestone-6-rest
 app.use(express.static('Assets'))
 
 mongoose.connect('mongodb://localhost/blog', {
