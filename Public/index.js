@@ -37,20 +37,11 @@ app.get("/", function (req, res){
       });
    });
 });
-//post
-// app.get('/post', function (req, res) {
-//     //pass through params to keep page updated 
-//        res.render('post');
-//     });
-app.get('/post/post_id', function(req, res){
-    var content = req.params.content;
-    var title = req.params.title;
-    showPost(title, content, function(err, blogpost){
-      if (err) throw error;
-      var showPost = res.params.post_id;
-      res.render('post', showPost);
+post
+app.get('/post', function (req, res) {
+    //pass through params to keep page updated 
+       res.render('post');
     });
-});
 app.post("/post", urlencodedParser, function(req, res) {
    //get data from the view and add it to mongodb
    var newPost = Post(req.body).save(function(err,data){
