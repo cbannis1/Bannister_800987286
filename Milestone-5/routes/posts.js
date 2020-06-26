@@ -23,15 +23,16 @@ router.get('/:id', async (req, res) =>{
 router.post('/', async (req, res ) => {
         let post = new Post({
         title: req.body.title,
-        content: req.body.content
+        content: req.body.content,
+        file: req.body.files
         })
         //if there is a file being passed as a parameter
-        if (req.files){
-          var file = req.files.filename,//declared variable file to be used for the filename 
+        if (req.body.files){
+          var file = req.body.files.filename,//declared variable file to be used for the filename 
           filename=file.name//assign the filename to be the file with proprety name 
           //create variable content and assign it to this function which takes in the content and then assigns post.content to the content recieved 
           fs.readFile(filename, 'utf8', function (err, filecontent){//reads the file, txt
-            req.params.content = filecontent
+            req.body.content = filecontent
           }) 
         }
         //if there is no file proceed to add the post as normal 
